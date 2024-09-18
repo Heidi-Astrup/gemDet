@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="da">
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Aarhus 1900</title>
+    <link rel="stylesheet" href="gsprint.css">
+    <link rel="javsscript" href="js.js">
+
+
+    
+</head>
+<body>
+
+    <header>
+        <h1>Aarhus 1900</h1>
+
+
+    </header>
+
+    <main>
+        <div class="flex-container">
+
+            <div class="billede-container">
+
+                <div class="slideshow-container">
+        
+                    <div class="mySlides fade">
+                        <div class="forsteboks">
+                            <div id="forsteBoks">
+                                <h1>HJEMMEKAMP</h1>
+                                <h2>Herre serie 2</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                        <div class="andenboks">
+                            <div id="andenBoks">
+                                <h1>HJEMMEKAMP</h1>
+                                <h2>Herre serie 2</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="tredjeboks">
+                        <div id="tredjeBoks">
+                            <h1>HJEMMEKAMP</h1>
+                            <h2>Herre serie 2</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                    
+                    </div>
+                    <br>
+                    
+                    <div style="margin-left: 435px;">
+                      <span class="dot" onclick="currentSlide(1)"></span> 
+                      <span class="dot" onclick="currentSlide(2)"></span> 
+                      <span class="dot" onclick="currentSlide(3)"></span> 
+                    </div>
+
+                
+
+                    <div class="nesteboks">
+                        <div id="nesteBoks">
+                            <h1>NYT MEDLEM</h1>
+                            <h2>Find dit nye hold</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                        </div>
+                    </div>
+            </div>
+
+
+            <div class="kalender-container">
+                <div class="camp">
+                    <h1>KAMPE</h1>
+
+                    <div class="mere">
+                        <div class="bil">
+                            <p>Aarhus 1900</p>
+                            <img src="1900.gif" alt="bad" style="width: 40%;" >
+                        </div>
+                        <p class="item">Vs.</p>
+                        <div class="bil">
+                            <p>VSK aarhus</p>
+                            <img src="VSKAarhus.png" alt="bad" style="width: 40%;" >
+                        </div>
+                    </div>
+
+                    <div class="mere">
+                        <div class="bil">
+                            <p>Aarhus 1900</p>
+                            <img src="1900.gif" alt="bad" style="width: 40%;" >
+                        </div>
+                        <p class="item">Vs.</p>
+                        <div class="bil">
+                            <p>Lyseng Fodbold</p>
+                            <img src="lyseng.png" alt="bad" style="width: 40%;" >
+                        </div>
+                    </div>
+
+                    <div class="mere">
+                        <div class="bil">
+                            <p>Aarhus 1900</p>
+                            <img src="1900.gif" alt="bad" style="width: 40%" >
+                        </div>
+                        <p class="item">Vs.</p>
+                        <div class="bil">
+                            <p>Aarhus Fremad</p>
+                            <img src="fremad.png" alt="bad" style="width: 40%;" >
+                        </div>
+                    </div>
+
+                    
+
+                        
+                </div>
+                
+            </div>
+
+    
+    </main>
+
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+    </script>
+
+    <footer>
+        <script>
+            function myMap() {
+            var mapProp= {
+            center:new google.maps.LatLng(56.14521864,10.18214405),
+            zoom:20,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            var marker = new google.maps.Marker({position: myCenter});
+
+            marker.setMap(map);
+            }
+        </script>
+
+        <div id="googleMap" style="width:20%;height:100px"></div>
+    </footer>
+</body>
+</html>
